@@ -41,11 +41,53 @@ PAYSTACK = ('<div class="paystack">${STOPS.map((st,i)=>`<div class="paycard ${i=
   '</div>`).join("")}</div>')
 
 
-def build(src, dst, prefix):
+ANDY_CAL = "https://calendly.com/andy-brik-studios"   # Andy has no Oldham Street Lofts event yet: his booking page
+
+def to_andy(s, prefix):
+    """Andy Davies's copy of the report: his name, title, photo, numbers, booking link and track record.
+    The building's 'Our take' stays Charlie's (it's the Sales Director's view)."""
+    def r(old, new, n=None):
+        k = s.count(old)
+        assert k >= 1 and (n is None or k == n), ("andy", old[:60], k)
+        return s.replace(old, new)
+    s = r('aria-label="About Charlie Baxter"', 'aria-label="About Andy Davies"')
+    s = r('<div class="apic" role="img" aria-label="Charlie Baxter"></div><div><b>Charlie Baxter</b><span>Co-founder and Sales Director, BRIK Studios and BRIK Capital</span>',
+          '<div class="apic" role="img" aria-label="Andy Davies"></div><div><b>Andy Davies</b><span>Senior Consultant, BRIK Studios</span>', 1)
+    s = r('<ul class="afacts"><li><b>10 years</b><span>in property</span></li><li><b>Cass</b><span>Business School</span></li><li><b>Portfolio</b><span>in Stockport</span></li></ul>',
+          '<ul class="afacts"><li><b>Sold</b><span>in every Underbanks block</span></li><li><b>Launched</b><span>Underbanks schemes</span></li><li><b>Invests</b><span>in Stockport</span></li></ul>', 1)
+    s = r('<p class="acred">BSc (Hons) Investment and Financial Risk Management, Cass Business School. Ranked 15th in Europe by the Financial Times (2017).</p>',
+          '<p class="acred">Heavily involved in Hall &amp; Co\'s Underbanks launches in Stockport, and personally responsible for a significant share of the sales in every one of their blocks. Has his own property portfolio in Stockport.</p>', 1)
+    s = r('<div class="contact"><div class="pic" role="img" aria-label="Charlie Baxter">', '<div class="contact"><div class="pic" role="img" aria-label="Andy Davies">', 1)
+    s = r('<ul class="cfacts"><li><b>Charlie Baxter</b><span>Co-founder and Sales Director, BRIK Studios and BRIK Capital</span></li><li><b>BSc (Hons) Investment and Financial Risk Management</b><span>Cass Business School, ranked 15th in Europe by the Financial Times (2017)</span></li><li><b>10 years in property</b><span>with a personal property portfolio in Stockport</span></li></ul>',
+          '<ul class="cfacts"><li><b>Andy Davies</b><span>Senior Consultant, BRIK Studios</span></li><li><b>Sold across every Underbanks block</b><span>Heavily involved in Hall &amp; Co\'s Underbanks launches in Stockport, and personally responsible for a significant share of the sales in each one</span></li><li><b>A Stockport investor himself</b><span>with his own property portfolio in the town</span></li></ul>', 1)
+    s = r('<span class="nm">Charlie Baxter</span>', '<span class="nm">Andy Davies</span>')
+    s = r('<span class="rl">Co-founder and Sales Director</span>', '<span class="rl">Senior Consultant</span>')
+    s = r('<div>Charlie Baxter, Co-founder and Sales Director</div>', '<div>Andy Davies, Senior Consultant</div>')
+    s = s.replace('<div class="av ph" aria-hidden="true">C</div>', '<div class="av ph" aria-hidden="true">A</div>').replace('<span class="av ph" aria-hidden="true">C</span>', '<span class="av ph" aria-hidden="true">A</span>')
+    s = r('<span class="patch" aria-hidden="true"><b>Charlie\'s</b><b>pick</b></span>', '<span class="patch" aria-hidden="true"><b>Andy\'s</b><b>pick</b></span>')
+    s = r('aria-hidden="true"></span>Charlie Baxter, Sales Director</figcaption>', 'aria-hidden="true"></span>Andy Davies, Senior Consultant</figcaption>')
+    # agent photo
+    for sel in ('.av.ph{background:var(--charlie)', '.apic{width:72px;height:72px;border-radius:50%;background:var(--charlie)', '.contact .pic{aspect-ratio:1;border-radius:50%;background:var(--charlie)'):
+        s = r(sel, sel.replace('var(--charlie)', 'var(--andy)'))
+    s = s.replace('<meta name="color-scheme" content="light only">', '<meta name="color-scheme" content="light only">\n<style>:root{--andy:url("' + prefix + 'assets/img/andy.webp")}</style>', 1)
+    # contact details, WhatsApp and booking
+    s = r('447353164480', '447760462489'); s = r('07353 164480', '07760 462489'); s = r('charlie@brik-studios.com', 'andy@brik-studios.com')
+    s = r('Hi%20Charlie', 'Hi%20Andy'); s = r('"Hi Charlie,', '"Hi Andy,')
+    s = r('Ask Charlie on WhatsApp', 'Ask Andy on WhatsApp'); s = r('WhatsApp Charlie', 'WhatsApp Andy')
+    s = r('const CAL="https://calendly.com/charlie-brik-studios/oldham-street-lofts-preview-video-call";', 'const CAL="' + ANDY_CAL + '";', 1)
+    s = r('const KEY="osl-report-v1";', 'const KEY="osl-andy-v1";', 1)
+    s = r('with Charlie', 'with Andy'); s = s.replace('Charlie will', 'Andy will').replace('Tour the scheme with Charlie', 'Tour the scheme with Andy')
+    s = re.sub(r'(<meta (?:name="description"|property="og:description"|name="twitter:description") content="[^"]*?)(\.?)"', lambda m: m.group(1) + ', with Andy Davies' + m.group(2) + '"', s)
+    return s
+
+
+def build(src, dst, prefix, andy=False):
     site = json.load(open(f"{HERE}/site.json", encoding="utf-8"))
     rv = json.load(open(f"{HERE}/reviews.json", encoding="utf-8"))
     e = lambda x: html.escape(x, quote=True)
     s = open(src, encoding="utf-8").read()
+    if prefix:  # the page's own pictures and film sit at the repo root
+        s = s.replace('url("img/', 'url("' + prefix + 'img/').replace('const FILM="film/";', 'const FILM="' + prefix + 'film/";').replace('href="film/"', 'href="' + prefix + 'film/"')
     P = prefix + "assets/img/"
     F = prefix + "assets/fonts/"
 
@@ -223,7 +265,7 @@ def build(src, dst, prefix):
     s = rep(s, 'const TABS={overview:"Investment overview",', 'const TABS={brief:"The brief",overview:"Investment overview",', label="TABS brief")
 
     # 8. link previews
-    url = site["url"]; img = site["url"] + "assets/img/og.jpg"
+    url = site["url"] + ("andy/" if andy else ""); img = site["url"] + "assets/img/og.jpg"
     esc = lambda x: x.replace("&", "&amp;").replace('"', "&quot;")
     tt, dd = esc(site["title"]), esc(site["description"])
     s, k = re.subn(r'<title>[^<]*</title>', f'<title>{tt}</title>', s, count=1); assert k == 1
@@ -261,6 +303,8 @@ def build(src, dst, prefix):
     k = s.rfind("</style>"); s = s[:k] + "\n/* ================= V2 SKIN ================= */\n" + css + "\n" + s[k:]
     k = s.rfind("</body>"); s = s[:k] + "<script>" + jsx + "</script>\n" + s[k:]
     assert "charit" not in s.lower()
+    if andy:
+        s = to_andy(s, prefix)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     open(dst, "w", encoding="utf-8").write(s)
     print(dst, round(os.path.getsize(dst) / 1024), "KB")
@@ -269,5 +313,6 @@ def build(src, dst, prefix):
 OUT = os.environ.get("OUT", REPO)
 PFX = os.environ.get("PFX", "")
 build(f"{HERE}/src/index.html", f"{OUT}/index.html", PFX)
+build(f"{HERE}/src/index.html", f"{OUT}/andy/index.html", "../" + PFX, andy=True)
 if MISSES:
     print("MISSES:\n  " + "\n  ".join(dict.fromkeys(MISSES)))
