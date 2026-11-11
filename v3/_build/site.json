@@ -4,23 +4,74 @@
  "description": "Fifteen red brick, mill-style one bed lofts in Hyde, 9 minutes' walk from Hyde Central, with trains to Manchester Piccadilly in about 18 to 22 minutes. Private preview from BRIK Studios.",
  "url": "https://charliebrikstudios.github.io/oldham-street-lofts/",
  "og_source": "img/sv1.jpg",
- "dev_hero": ["h_site", "On site, August 2026", "On site, August 2026: the frame and blockwork going up"],
- "arch_hero": ["arch1", "Ollier Smurthwaite project", "An Ollier Smurthwaite scheme"],
+ "dev_hero": [
+  "h_site",
+  "On site, August 2026",
+  "On site, August 2026: the frame and blockwork going up"
+ ],
+ "arch_hero": [
+  "arch1",
+  "Ollier Smurthwaite project",
+  "An Ollier Smurthwaite scheme"
+ ],
  "awards_cap": "Designed by",
  "awards_h": "An award-winning architect.",
  "awards_bg": "arch1",
  "awards": [
-  ["Manchester Society of Architects", "Winner", "", "The George, Stockport", ""],
-  ["Housing Design Awards", "Project Winner", "", "Climate Innovation District", ""],
-  ["House Builder Awards", "Winner", "", "Roof Gardens", ""],
-  ["Manchester Society of Architects", "Winner", "", "City Gardens", ""],
-  ["RIBA Regional Awards", "Small Project Award", "", "Devonshire Road", ""]
+  [
+   "Manchester Society of Architects",
+   "Winner",
+   "",
+   "The George, Stockport",
+   ""
+  ],
+  [
+   "Housing Design Awards",
+   "Project Winner",
+   "",
+   "Climate Innovation District",
+   ""
+  ],
+  [
+   "House Builder Awards",
+   "Winner",
+   "",
+   "Roof Gardens",
+   ""
+  ],
+  [
+   "Manchester Society of Architects",
+   "Winner",
+   "",
+   "City Gardens",
+   ""
+  ],
+  [
+   "RIBA Regional Awards",
+   "Small Project Award",
+   "",
+   "Devonshire Road",
+   ""
+  ]
  ],
  "urgency": {
   "cap": "Private preview · You're early",
-  "h": "Our Stockport launches sell out in days, not months.",
-  "stats": [["Under 2 weeks", "Underbank Lofts"], ["5 and 7 days", "The Print House, phases one and two"], ["Sold out", "St Marys Gate"]],
-  "p": "Oldham Street Lofts is fifteen lofts in Hyde. Plots 18 and 24, the only two corner lofts, are held back for this preview, before the rest of our database hears about them."
+  "h": "Our launches sell out in days, not months.",
+  "stats": [
+   [
+    "15",
+    "lofts in the whole building"
+   ],
+   [
+    "2",
+    "corner lofts, held back for this preview"
+   ],
+   [
+    "Only 2",
+    "one beds to rent in Hyde, both older flats"
+   ]
+  ],
+  "p": "Oldham Street Lofts is just fifteen lofts in Hyde, where there's almost nothing new to rent. Plots 18 and 24, the only two corners, are held back for this preview, before the rest of our database hears about them."
  },
  "tour": {
   "img": "front",
@@ -38,14 +89,41 @@
   ]
  },
  "faq": [
-  ["How do I reserve?", "Book a video call and choose your loft with Charlie. £3,500 then takes it off the market: £3,000 is your reservation deposit and counts towards your 20% deposit, and £500 is BRIK Studios' admin fee."],
-  ["What do I pay, and when?", "£3,500 to reserve. The rest of your 20% deposit on exchange, plus legal fees. The balance on completion, expected mid 2027, usually with a 75% buy-to-let mortgage."],
-  ["What's the lease and ground rent?", "A 999-year lease with a peppercorn ground rent."],
-  ["What's the service charge?", "£2.50 per sq ft per year, about £87 a month for an average one bed. There's no lift, lounge or gym in the building, which keeps it lean."],
-  ["Where is the build up to?", "Planning was granted by Tameside Council on 23 April 2025, reference 24/00783/FUL. The build is under way, with the frame and blockwork going up, and completion is expected mid 2027."],
-  ["Is there a build warranty?", "Yes, an ABC+ build warranty, accepted by most major lenders."],
-  ["What rent can I expect?", "We estimate £900 to £950 a month: £925 for a standard one bed and £950 for the larger corner lofts, let furnished. A lender's valuer will usually assess rent against unfurnished stock, so plan to borrow on a lower figure. Our estimates are not a formal rental valuation."],
-  ["Who looks after it once it's finished?", "We do: tenant find, referencing, rent collection and day-to-day management, for 10% of the rent, which is already in the numbers in this report. You don't need to live nearby."],
-  ["Who owns the freehold?", "Once the last lease is granted, the freehold passes to a management company owned by the apartment buyers."]
+  [
+   "How do I reserve?",
+   "Book a video call and choose your loft with Charlie. £3,500 then takes it off the market: £3,000 is your reservation deposit and counts towards your 20% deposit, and £500 is BRIK Studios' admin fee."
+  ],
+  [
+   "What do I pay, and when?",
+   "£3,500 to reserve. The rest of your 20% deposit on exchange, plus legal fees. The balance on completion, expected mid 2027, usually with a 75% buy-to-let mortgage."
+  ],
+  [
+   "What's the lease and ground rent?",
+   "A 999-year lease with a peppercorn ground rent."
+  ],
+  [
+   "What's the service charge?",
+   "£2.50 per sq ft per year, about £87 a month for an average one bed. There's no lift, lounge or gym in the building, which keeps it lean."
+  ],
+  [
+   "Where is the build up to?",
+   "Planning was granted by Tameside Council on 23 April 2025, reference 24/00783/FUL. The build is under way, with the frame and blockwork going up, and completion is expected mid 2027."
+  ],
+  [
+   "Is there a build warranty?",
+   "Yes, an ABC+ build warranty, accepted by most major lenders."
+  ],
+  [
+   "What rent can I expect?",
+   "We estimate £900 to £950 a month: £925 for a standard one bed and £950 for the larger corner lofts, let furnished. A lender's valuer will usually assess rent against unfurnished stock, so plan to borrow on a lower figure. Our estimates are not a formal rental valuation."
+  ],
+  [
+   "Who looks after it once it's finished?",
+   "We do: tenant find, referencing, rent collection and day-to-day management, for 10% of the rent, which is already in the numbers in this report. You don't need to live nearby."
+  ],
+  [
+   "Who owns the freehold?",
+   "Once the last lease is granted, the freehold passes to a management company owned by the apartment buyers."
+  ]
  ]
 }
