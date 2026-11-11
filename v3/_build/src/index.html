@@ -2132,7 +2132,7 @@ html.coverlock,html.coverlock body{overflow:hidden!important}
 </head>
 <body class="rep">
 <section id="welcome" aria-label="Cover">
-  <div class="w-img" role="img" aria-label="Oldham Street Lofts, corner of Church Street and Oldham Street, CGI"><span class="cmk" aria-hidden="true"></span><p class="w-hero"><span class="wopp">Private preview</span>Fifteen red brick lofts in Hyde.</p></div>
+  <div class="w-img" role="img" aria-label="Oldham Street Lofts, corner of Oldham Street and Syddall Street, CGI"><span class="cmk" aria-hidden="true"></span><p class="w-hero"><span class="wopp">Private preview</span>Fifteen red brick lofts in Hyde.</p></div>
   <div class="w-panel ledger">
     <div class="w-top cap"><span id="wFor">Investment report</span><span class="wpl"><i></i>Private preview</span></div>
     <div class="w-brand"><span class="casc" role="img" aria-label="Oldham Street Lofts, Syddall Street, Hyde SK14 1LB"><i style="--t:0%;--b:77%"></i><i style="--t:23%;--b:52%"></i><i style="--t:48%;--b:26%"></i><i style="--t:74%;--b:0%"></i></span></div>
@@ -2180,7 +2180,7 @@ html.coverlock,html.coverlock body{overflow:hidden!important}
       <div class="cap" id="introFor">Investment report, November 2026</div>
       <h1 class="sr">Oldham Street Lofts, Syddall Street, Hyde SK14 1LB</h1>
       <span class="mask plogo lg4 introlog" aria-hidden="true"></span><i class="htone" aria-hidden="true"></i>
-      <div class="addr">Fifteen one bed lofts around a shared resident garden, on the corner of Church Street and Oldham Street in Hyde. Planning granted in April 2025, and on site now.</div>
+      <div class="addr">Fifteen one bed lofts around a shared resident garden, on the corner of Oldham Street and Syddall Street in Hyde. Planning granted in April 2025, and on site now.</div>
     </div>
     <div class="headline hl2">
       <div class="sub"><div class="cap">Completion</div><div class="yl">Mid 2027</div><div class="hlnote">999-year lease<br>Peppercorn ground rent</div></div>
@@ -2228,8 +2228,8 @@ const B={id:"osl",name:"Oldham Street Lofts",addr:"Syddall Street, Hyde SK14 1LB
 const COMPLETION="mid 2027";
 const CAL="https://calendly.com/charlie-brik-studios/oldham-street-lofts-preview-video-call";
 const FILM="film/";
-const MAPS="https://www.google.com/maps/search/?api=1&query=Syddall%20Street%2C%20Hyde%20SK14%201LB";
-const MAPEMBED="https://www.google.com/maps?q=Syddall%20Street%2C%20Hyde%20SK14%201LB&z=16&output=embed";
+const MAPS="https://www.google.com/maps/search/?api=1&query=Oldham%20Street%20%26%20Syddall%20Street%2C%20Hyde%20SK14%201LB";
+const MAPEMBED="https://www.google.com/maps?q=Oldham%20Street%20%26%20Syddall%20Street%2C%20Hyde%20SK14%201LB&z=17&output=embed";
 const PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
 /* One block per apartment you're recommending (one to three). */
 const U=[
@@ -2254,7 +2254,7 @@ function sdlt(p){const b=[[125000,.05],[250000,.07],[925000,.10],[1500000,.15],[
 function calc(u){const mort=u.price*LTV*RATE/12,mg=u.rent*MGMT,net=u.rent-mort-u.sc-mg,top=u.price*(1-LTV)-u.dep,bal=u.dep-PAY.deposit,
   ex=PAY.total+bal+LEGAL_EX,st=sdlt(u.price),comp=ex+top+st+LEGAL_COMP;
   return {mort,mg,net,yld:u.rent*12/u.price*100,loan:u.price*LTV,top,ex,st,comp,bal}}
-const GALLERY=[{src:"var(--hero)",cap:"Corner of Church Street and Oldham Street, CGI"},{src:"var(--garden)",cap:"The walkway and resident garden, CGI"},{src:"var(--main)",cap:"The Syddall Street frontage, CGI"},
+const GALLERY=[{src:"var(--hero)",cap:"Corner of Oldham Street and Syddall Street, CGI"},{src:"var(--garden)",cap:"The walkway and resident garden, CGI"},{src:"var(--main)",cap:"The Syddall Street frontage, CGI"},
  {src:"var(--kitchen)",cap:"Living space, CGI"},{src:"var(--bed)",cap:"Bedroom, CGI"},{src:"var(--bath)",cap:"Shower room, CGI"},
  {src:"var(--fa18)",cap:"First floor, Plot 18 highlighted",plan:1},{src:"var(--fa24)",cap:"Second floor, Plot 24 highlighted",plan:1},
  {src:"var(--h_site)",cap:"On site, August 2026"}];
@@ -2263,7 +2263,7 @@ const ROOMS=[
  {t:"Open plan living",img:"var(--kitchen)",l:["Open plan living and kitchen","Sage kitchen","Tall windows","Laminate floors","Its own KERS heat pump water heater"]},
  {t:"Bedroom",img:"var(--bed)",l:["Separate double bedroom","Carpeted","Its own window"]},
  {t:"Shower room",img:"var(--bath)",l:["Tiled shower room","Shower, basin and WC","Off the hallway, between the living space and bedroom"]}];
-const SLIDES_B=[{k:"cover",src:"var(--hero)",cap:"Corner of Church Street and Oldham Street, CGI"},{k:"cover",src:"var(--garden)",cap:"The walkway and resident garden, CGI"},{k:"cover",src:"var(--main)",cap:"The Syddall Street frontage, CGI"},{k:"cover",src:"var(--kitchen)",cap:"Living space, CGI"}];
+const SLIDES_B=[{k:"cover",src:"var(--hero)",cap:"Corner of Oldham Street and Syddall Street, CGI"},{k:"cover",src:"var(--garden)",cap:"The walkway and resident garden, CGI"},{k:"cover",src:"var(--main)",cap:"The Syddall Street frontage, CGI"},{k:"cover",src:"var(--kitchen)",cap:"Living space, CGI"}];
 const slidesFor=u=>[{k:"cover",src:u.img,cap:(u.img==="var(--bed)"?"Bedroom":"Living space")+", CGI"},{k:"plan",src:u.fb,cap:u.name+" floor plan"},{k:"plan",src:u.fa,cap:"Whole floor, "+u.name+" highlighted"},{k:"cover",src:u.img==="var(--bed)"?"var(--kitchen)":"var(--bed)",cap:(u.img==="var(--bed)"?"Living space":"Bedroom")+", CGI"},{k:"cover",src:"var(--bath)",cap:"Shower room, CGI"},{k:"cover",src:"var(--garden)",cap:"The walkway and resident garden, CGI"}];
 const ARCH=[["var(--h_band)","Hyde Park bandstand"],["var(--h_park)","Hyde Park"],["var(--h_hcent)","Hyde Central station"],["var(--h_ronhill)","Home to Ron Hill, Hyde Central"]];
 const MERCH=[];
@@ -2466,14 +2466,14 @@ const IMG=(v,cap,cls="")=>`<button class="${cls}" style="background-image:var(--
 const chh=(n,t,p)=>`<div class="chh"><span class="no" aria-hidden="true">${n}</span><div><h2 class="rv0">${t}</h2>${p?`<p>${p}</p>`:""}</div>${chSeal()}</div>`;
 const CH={};
 const U0=U[0],C0=calc(U[0]);
-CH.overview=()=>`<section class="ch" id="overview">${chh("01","Investment overview","Fifteen one bed lofts in a red brick, mill-style building on the corner of Church Street and Oldham Street, a short walk from the heart of Hyde. Here are the headline numbers on the two corner lofts held back for this preview.")}
+CH.overview=()=>`<section class="ch" id="overview">${chh("01","Investment overview","Fifteen one bed lofts in a red brick, mill-style building on the corner of Oldham Street and Syddall Street, a short walk from the heart of Hyde. Here are the headline numbers on the two corner lofts held back for this preview.")}
  <div class="kpis"><div><div class="cap">Plots 18 and 24</div><div class="v" data-count="${U0.price}" data-pre="£" data-comma="1">${gbp(U0.price)}</div><small>each, 1 bed corner loft</small></div>
   <div><div class="cap">Gross yield</div><div class="v g" data-count="${C0.yld.toFixed(1)}" data-dec="1" data-suf="%">${pct(C0.yld)}</div><small>on ${gbp(U0.rent)} pcm, estimated</small></div>
   <div><div class="cap">Size</div><div class="v" data-count="${U0.area}" data-suf=" sq ft">${U0.area} sq ft</div><small>the largest type in the building</small></div>
   <div><div class="cap">Price per sq ft</div><div class="v" data-count="${Math.round(U0.psf)}" data-pre="£">${gbp(U0.psf)}</div><small>the lowest in the building</small></div>
   <div><div class="cap">Net cash flow</div><div class="v g" data-count="${C0.net.toFixed(2)}" data-pre="£" data-dec="2">£${C0.net.toFixed(2)}</div><small>per month, after costs</small></div></div>
  <div class="phases">${[["Planning","Granted","April 2025, 24/00783/FUL",""],["On site","Building now","Frame and blockwork going up",""],["Private preview","Open now","Plots 18 and 24 held back","now"]].map(([a,b,c,k])=>`<div class="ph3 ${k}"><span class="cap">${a}</span><b>${b}</b><small>${c}</small></div>`).join("")}<p class="phn">Plots 18 and 24 are the only two corner lofts in the building. You're early: they're being shown to a small group of investors before the wider launch. Book a video call with Charlie to choose yours.</p></div>
- <button class="hero-img" data-img="hero" data-cap="Corner of Church Street and Oldham Street, CGI" aria-label="View the Oldham Street Lofts image"><span class="cap">Corner of Church Street and Oldham Street, CGI</span><span class="patch wm" aria-hidden="true"><i></i></span></button>
+ <button class="hero-img" data-img="hero" data-cap="Corner of Oldham Street and Syddall Street, CGI" aria-label="View the Oldham Street Lofts image"><span class="cap">Corner of Oldham Street and Syddall Street, CGI</span><span class="patch wm" aria-hidden="true"><i></i></span></button>
  <div class="duo w" style="margin-top:52px"><div><div class="cap" style="margin-bottom:14px">Why it's rare</div><h3 class="big-h">Almost nothing new to rent in Hyde.</h3>
   <div class="body"><p class="lead">When we checked the listings in October, the only one beds to rent in Hyde were two older first floor flats on Market Street and Market Place. Oldham Street Lofts will be brand new, with a resident garden and a secure bike space for every apartment.</p>
   <p class="muted" style="margin-top:14px">It's rare product for the town: character stock minutes from the market place and Hyde Central, for buyers and renters being priced out of Manchester's mill conversions.</p>
@@ -2519,11 +2519,11 @@ CH.heritage=()=>`<section class="ch" id="heritage">${chh("03","Hyde's heritage",
  <div class="arch">${[["h_band","Hyde Park bandstand"],["h_park","Hyde Park"],["h_hcent","Hyde Central station"],["h_ronhill","Home to Ron Hill, Hyde Central"]].map(([v,c])=>`<button style="background-image:var(--${v})" data-img="${v}" data-cap="${c}" aria-label="${c}"><span>${c}</span></button>`).join("")}</div>
  <p class="fine">History from the Oldham Street Lofts Design and Access Statement. Photography from our film shoot in Hyde, August 2026.</p></section>`;
 
-CH.location=()=>`<section class="ch" id="location">${chh("04","Location","Between Syddall Street, Church Street and Oldham Street: a short walk from the heart of Hyde, and 9 minutes on foot from Hyde Central.")}
+CH.location=()=>`<section class="ch" id="location">${chh("04","Location","Between Syddall Street, Oldham Street and Syddall Street: a short walk from the heart of Hyde, and 9 minutes on foot from Hyde Central.")}
  <div class="duo w"><button class="pic tall2" style="background-image:var(--main);aspect-ratio:4/3" data-img="main" data-cap="The Syddall Street frontage, CGI" aria-label="View the Syddall Street frontage"></button>
   <div><div class="cap" style="margin-bottom:14px">Getting about</div><h3 class="big-h">The high street and the station, both on foot.</h3><p class="lead">Church Street runs straight on to Market Street, the town's high street, where the nearest bus stops are. Hyde Central station is 0.4 miles away, about 9 minutes on foot.</p>
   <div class="row" style="margin-top:22px"><a class="b line" href="${MAPS}" target="_blank" rel="noopener">Open in Google Maps</a><a class="b line" href="${FILM}" target="_blank" rel="noopener">Watch the film</a></div></div></div>
- <figure class="sitemap"><div class="smframe"><iframe title="Map showing Oldham Street Lofts, Syddall Street, Hyde SK14 1LB" src="${MAPEMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><figcaption><span><b>Oldham Street Lofts</b> Syddall Street, Hyde SK14 1LB. On the corner of Church Street and Oldham Street.</span><a href="${MAPS}" target="_blank" rel="noopener">Open in Google Maps</a></figcaption></figure>
+ <figure class="sitemap"><div class="smframe"><iframe title="Map showing Oldham Street Lofts, Syddall Street, Hyde SK14 1LB" src="${MAPEMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><figcaption><span><b>Oldham Street Lofts</b> Syddall Street, Hyde SK14 1LB. On the corner of Oldham Street and Syddall Street.</span><a href="${MAPS}" target="_blank" rel="noopener">Open in Google Maps</a></figcaption></figure>
  <div class="cols2 lists"><div><h3 class="lh">${IC.walk}On foot</h3><ul class="walk">${[["Market Street, the high street","close by",2,IC.shop],["Bus stops on Market Street","close by",2,IC.bus],["St George's Church","close by",2,IC.church],["Hyde Central station","9 min",9,IC.train]].map(([a,t,m,ic])=>`<li><i class="wi">${ic}</i><span class="wl">${a}</span><span class="wt">${IC.walk}<b>${t}</b></span><span class="wb" style="--w:${Math.max(5,Math.round(m/9*62))}"></span></li>`).join("")}</ul></div>
   <div><h3 class="lh">${IC.train}Further afield</h3><ul class="conn">${[["Manchester Piccadilly","18–22 min","by train from Hyde Central",IC.train],["Manchester city centre","7.5 miles","",IC.build],["Stockport","5 miles","",IC.build],["Glossop","6 miles","",IC.street]].map(([a,b,c,ic])=>`<li><i class="wi">${ic}</i><span class="wl">${a}</span><span class="ct"><b>${b}</b><small>${c}</small></span></li>`).join("")}</ul></div></div>
  <div class="sec"><div class="cap"><span>The streets around it</span></div><div class="duo w"><div><h3 class="big-h">Red brick terraces and old mills.</h3><p class="lead">The streets around Syddall Street are red brick terraces of two and three storeys, set close to the pavement, with a scatter of taller mill and warehouse buildings just to the south east: a reminder of what filled these streets a century ago.</p>
@@ -2639,7 +2639,7 @@ function buildingPanel(){const p=$("#pBld"),exp=p.dataset.exp==="1";
    <div class="sec"><div class="cap"><span>About the building</span></div>
     <p class="lead">Fifteen one bed lofts in a red brick, mill-style building, gathered around a shared resident garden a short walk from the heart of Hyde.</p>
     <div class="body" style="margin-top:16px"><div class="${exp?"":"clamp"}">
-     <p>The building rises at the corner of Church Street and Oldham Street. The upper floors are reached by an external steel and glass walkway that looks over the garden, which is guaranteed for residents in perpetuity by the planning permission.</p>
+     <p>The building rises at the corner of Oldham Street and Syddall Street. The upper floors are reached by an external steel and glass walkway that looks over the garden, which is guaranteed for residents in perpetuity by the planning permission.</p>
      <p>Inside: open plan living with a sage kitchen, tall windows, laminate floors, a carpeted bedroom and a tiled shower room, with a KERS heat pump water heater in every apartment. There's no lift, lounge or gym, which keeps the service charge lean.</p>
      <p>Once the last lease is granted, the freehold passes to a management company owned by the apartment buyers, so owners end up controlling their own building.</p></div>
      <button class="txt" id="expand">${exp?"Show less":"Read more"}</button></div></div>
