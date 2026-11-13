@@ -3127,7 +3127,6 @@ html,:root{color-scheme:light only!important;background:#EEE5DF}
    Light, warm palette from V3's own tokens; one gold line accent.
    ===================================================================== */
 :root{
-  --pz_band:url("../img/pz_band.jpg");--pz_market:url("../img/pz_market.jpg");--pz_park:url("../img/pz_park.jpg");
   --v4warm:#F3ECE2;      /* warm off-white for the technical pages */
   --v4plan:#FCFAF6;      /* plan paper */
   --v4gold:#B08654;      /* the thin line motif */
@@ -3711,11 +3710,7 @@ const BRIEF=()=>`<section class="brief"><div class="partlab"><span class="pno">P
 
 /* ============ V4 additions (approved 13 Nov 2026) ============ */
 /* V4 C2: full-bleed pause images between chapters, no text. Brik's own footage. */
-const PZ=(cls,v,label,pos)=>`<figure class="pause ${cls}" role="img" aria-label="${label}"><i class="pz" style="background-image:var(--${v});background-position:${pos}"></i></figure>`;
-const PAUSE={
- brief:PZ("pz-hy","pz_band","The bandstand in Hyde Park","center 50%"),
- opportunity:PZ("pz-hy","pz_market","Market Street, Hyde's high street","center 50%"),
- intel:PZ("pz-hy","pz_park","A walk through Hyde Park","center 50%")};
+const PAUSE={}; /* Hyde breaks removed until there is 4K Hyde footage */
 /* V4 C8: your amenities, with walking times from the list below */
 const AMEN=`<div class="amen"><div class="amen-head"><div><span class="v4lab">Your amenities</span><h3 class="big-h">Everything you need, a short walk away.</h3></div><p class="lead">Market Street, the high street, and its bus stops are close by, and Hyde Central station is about 9 minutes on foot.</p></div>
  <div class="amen-grid n2">${[["h_market", "Market Street, the high street", "Close by"], ["h_hcent", "Hyde Central station", "9 min walk"]].map(([v,t,m])=>`<button style="background-image:var(--${v})" data-img="${v}" data-cap="${t}" aria-label="View ${t}"><span class="at"><b>${t}</b><span>${m}</span></span></button>`).join("")}</div></div>`;
