@@ -2215,7 +2215,7 @@ html.coverlock,html.coverlock body{overflow:hidden!important}
 <div class="dlg" id="dlg" hidden><div class="box" role="dialog" aria-modal="true" id="dlgBox"></div></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<div class="ctabar" id="ctabar"><div class="wrap"><p><b>Private preview: Plots 18 and 24, £174,000 and £176,000.</b><span> Two corner lofts, held back. Choose yours on a 30-minute video call.</span></p><div class="cta-b"><button class="b cta-l" id="ctaCall">WhatsApp Charlie</button><button class="b cta-s" id="ctaRes">Book a video call</button></div></div></div>
+<div class="ctabar" id="ctabar"><div class="wrap"><p><b>Private preview: Plots 18 and 24, £174,000 and £170,000.</b><span> Two corner lofts, held back. Choose yours on a 30-minute video call.</span></p><div class="cta-b"><button class="b cta-l" id="ctaCall">WhatsApp Charlie</button><button class="b cta-s" id="ctaRes">Book a video call</button></div></div></div>
 
 <script>
 
@@ -2237,7 +2237,7 @@ const U=[
   img:"var(--kitchen)",pos:"var(--hero)",fa:"var(--fa18)",fb:"var(--fb18)",stand:"One of only two corner lofts",
   line:"A first-floor corner loft, type 1C+: the largest apartment type in the building, with the living space and bedroom at opposite ends, each with its own window.",
   keys:["First floor, type 1C+ corner loft","1 bed, 469 sq ft: one of only two apartments this size","Living space and bedroom at opposite ends, each with its own window","Open plan living with a sage kitchen, and a tiled shower room","Its own KERS heat pump water heater","Front door off the steel and glass walkway over the resident garden","One secure bike space"]},
- {id:"p24",name:"Plot 24",floor:"Second floor (top)",bld:"Apartment building",type:"1 bed corner loft",area:469,price:176000,rent:950,
+ {id:"p24",name:"Plot 24",floor:"Second floor (top)",bld:"Apartment building",type:"1 bed corner loft",area:469,price:170000,rent:950,
   img:"var(--bed)",pos:"var(--hero)",fa:"var(--fa24)",fb:"var(--fb24)",stand:"The top-floor corner loft, with nobody above you",
   line:"The same corner loft one floor up, type 1C+: on the top floor, with nobody above you, the living space and bedroom at opposite ends.",
   keys:["Second (top) floor, type 1C+ corner loft","1 bed, 469 sq ft: one of only two apartments this size","Top floor, so nobody above you","Living space and bedroom at opposite ends, each with its own window","Open plan living with a sage kitchen, and a tiled shower room","Its own KERS heat pump water heater","Front door off the steel and glass walkway over the resident garden"]}
@@ -2467,7 +2467,7 @@ const chh=(n,t,p)=>`<div class="chh"><span class="no" aria-hidden="true">${n}</s
 const CH={};
 const U0=U[0],C0=calc(U[0]);
 CH.overview=()=>`<section class="ch" id="overview">${chh("01","Investment overview","Fifteen one bed lofts in a red brick, mill-style building on the corner of Oldham Street and Syddall Street, a short walk from the heart of Hyde. Here are the headline numbers on the two corner lofts held back for this preview.")}
- <div class="kpis"><div><div class="cap">Plots 18 and 24</div><div class="v" data-count="${U0.price}" data-pre="From £" data-comma="1">From ${gbp(U0.price)}</div><small>1 bed corner loft</small></div>
+ <div class="kpis"><div><div class="cap">Plots 18 and 24</div><div class="v" data-count="${Math.min(...U.map(u=>u.price))}" data-pre="From £" data-comma="1">From ${gbp(Math.min(...U.map(u=>u.price)))}</div><small>1 bed corner loft</small></div>
   <div><div class="cap">Gross yield</div><div class="v g" data-count="${C0.yld.toFixed(1)}" data-dec="1" data-suf="%">${pct(C0.yld)}</div><small>on ${gbp(U0.rent)} pcm, estimated</small></div>
   <div><div class="cap">Size</div><div class="v" data-count="${U0.area}" data-suf=" sq ft">${U0.area} sq ft</div><small>the largest type in the building</small></div>
 
