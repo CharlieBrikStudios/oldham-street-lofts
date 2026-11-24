@@ -2410,7 +2410,7 @@ function returnsTab(){const u=defaultCalc(),c=calc(u),y=r=>(r*12/u.price*100).to
   <div class="cols2">
   <section class="sec"><div class="cap"><span>Monthly figures</span></div>
    <div class="rows big"><div><span>Rent estimate</span><span>${gbp(u.rent)}</span></div>
-    <div><span>Mortgage, 75% at 4% interest only</span><span>−£${c.mort.toFixed(2)}</span></div>
+    <div><span>Mortgage, 75% interest only at the average mortgage rate</span><span>−£${c.mort.toFixed(2)}</span></div>
     <div><span>Letting management, 10%</span><span>−${gbp(c.mg)}</span></div>
     <div><span>Service charge, est., £2.50 per sq ft per year</span><span>−£${u.sc.toFixed(2)}</span></div>
     <div><span>Ground rent</span><span>Peppercorn</span></div>
@@ -2425,7 +2425,7 @@ function returnsTab(){const u=defaultCalc(),c=calc(u),y=r=>(r*12/u.price*100).to
    <div class="duo w"><div><h3>New, furnished stock in Ashton already lets at £945 to £955.</h3><p class="muted">There is almost nothing new to rent in Hyde itself. The nearest like-for-like evidence is refurbished and mill conversion stock in Stalybridge, Dukinfield, Denton and Woodley, and new furnished apartments in Ashton. Our £950 estimate for the corner lofts sits at the top of that range.</p></div>
     <div class="growth g3">${[[900,"At £900 pcm"],[925,"At £925 pcm"],[950,"At £950 pcm, our estimate"]].map(([r,t])=>`<div class="gstat"><b>${y(r)}</b><span>${t}</span></div>`).join("")}</div></div>
    ${ladder()}</section>
-  <p class="fine">Rents are BRIK Studios' estimates from live asking rents, not a formal rental valuation, and assume the apartment is let furnished. A lender's valuer will usually assess rent against unfurnished stock, so plan to borrow on a lower figure. Mortgage figures assume a 75% interest-only buy-to-let mortgage at 4%. *Stamp duty at today's higher rates for an additional property. Take your own financial, tax and legal advice.</p>
+  <p class="fine">Rents are BRIK Studios' estimates from live asking rents, not a formal rental valuation, and assume the apartment is let furnished. A lender's valuer will usually assess rent against unfurnished stock, so plan to borrow on a lower figure. Mortgage figures assume a 75% interest-only buy-to-let mortgage at the average mortgage rate. *Stamp duty at today's higher rates for an additional property. Take your own financial, tax and legal advice.</p>
   <div class="ctaline"><span class="serif">Happy with the numbers?</span><button class="b solid" data-req="${u.id}">Book a video call</button></div></div>`}
 function galleryTab(){return `<div class="pane"><section class="sec first"><div class="cap"><span>Gallery</span><span>${GALLERY.length} images</span></div>
   <div class="gal">${GALLERY.map((g,i)=>`<button class="${g.plan?"plan":""}" style="background-image:${g.src}" data-gi="${i}" aria-label="View ${g.cap}"><span>${g.cap}</span></button>`).join("")}</div>
